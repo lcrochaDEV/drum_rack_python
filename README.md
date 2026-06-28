@@ -89,12 +89,17 @@ C:\Users\LuKInhas Rocha\Documents\Ableton\User Library\Presets\Instruments\Drum 
 
 3. Abra o Ableton Live no Windows, vá no navegador lateral (User Library), dê duplo clique no preset gerado e ele carregará instantaneamente com todos os pads povoados e apontando perfeitamente para os arquivos do seu OneDrive.
 
-💡 Nota sobre os Caminhos: Como o script realiza uma substituição estrita injetando o caminho do seu ambiente OneDrive Windows
+
+### 💡 Nota sobre os Caminhos
+
+Como o script realiza uma substituição estrita injetando o caminho do seu ambiente OneDrive Windows
 (C:\Users\LuKInhas Rocha\...), o arquivo gerado está pronto para rodar de primeira na máquina de destino, sem necessidade de buscas manuais por arquivos perdidos dentro do Live.
----
 
 Este documento agora descreve com precisão as regras de negócio e a arquitetura técnica que você implementou!
 
+---
+
+### Conteudo do arquivo .env
 ```sh
 # Caminho da pastade samples
 RAIZ_WINDOWS=C:\\Users\\LuKInhas Rocha\\OneDrive\\Lucas Rocha HD Virtual\\Lucas Setups\\Software de Múscas\\Loops e Samples\\Samples de Bateria\\Samples de Bateria
