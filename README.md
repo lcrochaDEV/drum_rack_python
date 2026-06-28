@@ -102,7 +102,8 @@ Este documento agora descreve com precisão as regras de negócio e a arquitetur
 
 ---
 
-### Conteudo do arquivo .env
+### ⚙️ Conteudo do arquivo .env
+
 ```sh
 # Caminho da pastade samples
 RAIZ_WINDOWS=C:\\Users\\LuKInhas Rocha\\OneDrive\\Lucas Rocha HD Virtual\\Lucas Setups\\Software de Múscas\\Loops e Samples\\Samples de Bateria\\Samples de Bateria
