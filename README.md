@@ -40,6 +40,8 @@ deactivate
 
 O script abaixo varre recursivamente a pasta local Samples de Bateria (localizada no mesmo diretório do arquivo .py), lê os arquivos de áudio em ordem alfabética e distribui-os sequencialmente pelos pads do Drum Rack, iniciando na nota C1 (Nota MIDI 36).
 
+![Drum Rack](Ableton_Live_Drum_Racks_Blur_Cover-652x408-fc1bad6b.jpg)
+
 ## 🚀 Como Funciona?
 Automatizar a criação de Drum Racks (`.adg`) com Python é perfeitamente possível e poupa horas de trabalho braçal. 
 
@@ -47,6 +49,7 @@ O fluxo do script realiza duas operações principais:
 
 1. **Varredura e Intercalação (Round-Robin):** Organiza todos os samples da pasta local por subpastas (categorias) e cria uma fila unificada de até 128 samples intercalando uma categoria após a outra (ex: *Kick 1, Snare 1, HiHat 1, Kick 2, Snare 2...*).
 2. **Substituição Cirúrgica:** Altera estritamente os caminhos dos arquivos injetando uma raiz customizada do Windows e atualiza as tags `<Name>` internas removendo a extensão do arquivo para manter o display do Simpler limpo.
+
 
 ```text
 meu_projeto/
