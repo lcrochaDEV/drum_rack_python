@@ -81,13 +81,16 @@ Este script varre a sua pasta de samples, organiza os arquivos de áudio por sub
 ### Passo 2: Como Importar o Preset Gerado no Ableton
 1. Execute o script Python para gerar o arquivo Drum_Rack_Automatizado.adg.
 
-```Bash
+```bash
 python3 app.py
 ```
 
 2. Transfira o arquivo gerado Drum_Rack_Automatizado.adg para a sua máquina Windows e jogue-o dentro da sua User Library do Ableton, no caminho padrão de Drum Racks:
-```
+
+```cmd
 C:\Users\LuKInhas Rocha\Documents\Ableton\User Library\Presets\Instruments\Drum Rack\
+ou
+%USERPROFILE%\Documents\Ableton\User Library\Presets\Instruments\Drum Rack\
 ``` 
 
 3. Abra o Ableton Live no Windows, vá no navegador lateral (User Library), dê duplo clique no preset gerado e ele carregará instantaneamente com todos os pads povoados e apontando perfeitamente para os arquivos do seu OneDrive.

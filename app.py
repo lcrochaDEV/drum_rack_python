@@ -16,6 +16,7 @@ PASTA_DE_SAMPLES = os.getenv("PASTA_DE_SAMPLES")
 ARQUIVO_FINAL_ADG = os.getenv("ARQUIVO_FINAL_ADG")
 # Avalia se a string do .env é de fato "true" (independente de maiúsculas/minúsculas)
 INTERCALAR = os.getenv("INTERCALAR", "True").strip().lower() == "true"
+DIRETORIO_OUTPUT = os.getenv("DIRETORIO_OUTPUT")
 
 def obter_novos_samples_intercalados(base_path, intercalar=True):
     formatos_validos = ('.wav', '.aif', '.aiff', '.mp3', '.flac')
@@ -71,7 +72,7 @@ def obter_novos_samples_intercalados(base_path, intercalar=True):
 
     return lista_intercalada
 
-def gerar_drum_rack_com_nova_raiz_windows(caminho_samples, nome_output_adg, intercalar=True):
+def gerar_drum_rack_com_nova_raiz_windows(caminho_samples, nome_output_adg, intercalar=True, diretorio_output=None):
     base_path = Path(caminho_samples).resolve()
     template_path = Path("Drum_Rack.adg").resolve()
     
@@ -147,7 +148,15 @@ def gerar_drum_rack_com_nova_raiz_windows(caminho_samples, nome_output_adg, inte
 
     xml_final_bytes = b"\n".join(linhas_modificadas)
 
-    output_path = Path(nome_output_adg).resolve()
+    # --- NOVA LÓGICA DE SALVAMENTO ---
+    if diretorio_output:
+        pasta_destino = Path(diretorio_output).resolve()
+        pasta_destino.mkdir(parents=True, exist_ok=True)  # Cria a pasta se não existir
+        output_path = pasta_destino / Path(nome_output_adg).name
+    else:
+        output_path = Path(nome_output_adg).resolve()
+    # ----------------------------------
+
     with gzip.open(output_path, 'wb') as f:
         f.write(xml_final_bytes)
 
@@ -159,4 +168,4 @@ def gerar_drum_rack_com_nova_raiz_windows(caminho_samples, nome_output_adg, inte
 
 if __name__ == "__main__":
 
-    gerar_drum_rack_com_nova_raiz_windows(PASTA_DE_SAMPLES, ARQUIVO_FINAL_ADG, INTERCALAR)
+    gerar_drum_rack_com_nova_raiz_windows(PASTA_DE_SAMPLES, ARQUIVO_FINAL_ADG, INTERCALAR, DIRETORIO_OUTPUT)
